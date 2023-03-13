@@ -25,7 +25,6 @@ nextjs-nodejs/
 user-dirs.dirs/
 configstore/                 
 google-chrome/
-nvim                
 user-dirs.locale/
 dconf/           
 gtk-3.0/                   
@@ -33,11 +32,8 @@ obsidian/
 vlc/
 deepin/                      
 gtk-4.0/
-picom               
 xfce4/
 discord/
-i3
-polybar/
 xwallpaper/
 dleyna-server-service.conf
 ibus/
@@ -55,4 +51,3 @@ libreoffice/
 pulse/
 evolution/                   
 menus/
-rofi
