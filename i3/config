@@ -51,7 +51,7 @@ default_floating_border pixel 2
 hide_edge_borders smart
 
 #Picom
-exec_always --no-startup-id picom
+exec --no-startup-id picom
 
 #Gaps
 gaps inner 12
