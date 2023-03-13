@@ -50,10 +50,7 @@ eog/
 libreoffice/               
 pulse/
 evolution/                   
-menus/
 user-dirs.locale
-user-dirs.dirs
-monitors.xml
-gnome-initial-setup-done
-.gsd-keyboard.settings-ported
+menus/
+bkps/
 
