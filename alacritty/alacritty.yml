@@ -1,0 +1,71 @@
+# Tamanho da janela (em caracteres)
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+
+# Esquema de cores
+colors:
+  primary:
+    background: '0x1c1c1c'
+    foreground: '0xe2e2e2'
+
+  # Cores normais
+  normal:
+    black:   '0x262626'
+    red:     '0xd75f5f'
+    green:   '0x83af83'
+    yellow:  '0xc4a45a'
+    blue:    '0x7cafc2'
+    magenta: '0xd787af'
+    cyan:    '0x87d7af'
+    white:   '0xeeeeee'
+
+  # Cores em negrito
+  bright:
+    black:   '0x1c1c1c'
+    red:     '0xd75f5f'
+    green:   '0x83af83'
+    yellow:  '0xc4a45a'
+    blue:    '0x7cafc2'
+    magenta: '0xd787af'
+    cyan:    '0x87d7af'
+    white:   '0xffffff'
+
+# Fonte
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+
+  size: 11.0
+
+# Histórico de rolagem
+scrolling:
+  history: 1000
+
+# Opções do cursor
+cursor:
+  style: Block
+  blink_interval: 750
+  thickness: 0.15
+
+# Atalhos de teclado
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: T, mods: Control, action: SpawnNewInstance }
+  - { key: L, mods: Control|Shift, action: ClearHistory }
+  - { key: Q, mods: Control, action: Quit }
