@@ -1,5 +1,8 @@
 # Tamanho da janela (em caracteres)
 window:
+  padding: 
+    x: 10
+    y: 5
   dimensions:
     columns: 80
     lines: 24

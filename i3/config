@@ -43,12 +43,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Borders
 # Also removes all title bars
-for_window [class="^.*"] border pixel 2
-default_border pixel 2
-default_floating_border pixel 2
+for_window [class="^.*"] border pixel 1
+default_border pixel 1
+default_floating_border pixel 1
 
 #Hide borders at the edge of the screen
 hide_edge_borders smart
+
+# Set colors
+client.focused #9aa5ce #c0caf5 #c0caf5 #c0caf5
 
 #Picom
 exec --no-startup-id picom
