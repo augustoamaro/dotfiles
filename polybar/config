@@ -1,36 +1,5 @@
-;==========================================================
-;
-; THIS IS AN EXAMPLE CONFIGURATION FILE!
-; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
-; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
-; TO GENERATE IT.
-; Please refer to the web documentation hosted at:
-; https://github.com/polybar/polybar#configuration
-; and
-; https://github.com/polybar/polybar/wiki/Configuration
-; if you want to automatically generate one for you.
-;
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
 [colors]
-;background = ${xrdb:color0:#222}
-background = #414868
+background = #1a1b26
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #DFDFDF
@@ -63,7 +32,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+;font-0 = fixed:pixelsize=10;1
+font-0 = "Fira Code:size=8:weight=normal" 
 font-1 = "FontAwesome:size=10;2"
 font-2 = siji:pixelsize=10;1
 
@@ -120,19 +90,19 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
+label-focused-background = #1a1b26
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-foreground = #1a1b26
+label-empty-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -146,18 +116,19 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-padding = 1
+label-mode-foreground = #fba922
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
+label-focused-background = #1a1b26
+label-focused-underline = #7aa2f7
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -167,7 +138,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
