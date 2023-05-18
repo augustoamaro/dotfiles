@@ -53,7 +53,7 @@ font:
     family: Fira Code
     style: Bold Italic
 
-  size: 11.0
+  size: 10.0
 
 # Histórico de rolagem
 scrolling:
@@ -72,3 +72,6 @@ key_bindings:
   - { key: T, mods: Control, action: SpawnNewInstance }
   - { key: L, mods: Control|Shift, action: ClearHistory }
   - { key: Q, mods: Control, action: Quit }
+
+shell:
+  program: tmux
