@@ -1,3 +1,5 @@
+# vim:filetype=dosini
+
 [colors]
 background = #1a1b26
 background-alt = #444
@@ -11,7 +13,7 @@ alert = #bd2c40
 [bar/bar1]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 22
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -32,17 +34,16 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = fixed:pixelsize=10;1
-font-0 = "Fira Code:size=8:weight=normal" 
-font-1 = "FontAwesome:size=10;2"
-font-2 = siji:pixelsize=10;1
+font-0 = "Fira Code:size=10:weight=normal" 
+font-1 = "Material Icons:size=12;1"
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu eth temperature date
+modules-right = filesystem pulseaudio xkeyboard memory cpu temperature battery date time wlan shutdown
 
-tray-position = right
-tray-padding = 2
+;Programas
+;tray-position = right
+;tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -63,11 +64,19 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:30:...%
 
+[module/shutdown]
+type = custom/script
+exec = echo ""
+click-left = shutdown -h now
+format-foreground = #000000
+format-background = ${colors.foreground-alt}
+format-padding = 1
+
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
@@ -141,7 +150,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
-; label-separator = |
+;label-separator = |
 
 
 [module/mpd]
@@ -182,42 +191,42 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage:2%%
+label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp59s0
+;interface = wlp59s0
+interface = wlp0s20f3
 interval = 3.0
 
-format-connected =  <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <ramp-signal> <label-connected>
+;label-connected = %essid%
+label-connected =
 
-format-disconnected =
+format-disconnected = 
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/network]
 type = internal/network
-interface = enp0s31f6
+interface = enp46s0
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -235,19 +244,27 @@ format-disconnected =
 type = internal/date
 date = "%d/%m/%Y"
 time = %H:%M
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
-label = %date% %time%
+#label = %date% %time%
+label = %date%
+
+[module/time]
+type = internal/date
+time = %H:%M
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${colors.foreground-alt}
 
-label-muted =  muted
+label-muted = 
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -273,28 +290,35 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+#format-charging = <animation-charging> <label-charging>
+#format-charging =  <label-charging>
+label-charging = "%{F#00FF00}%percentage%%"
+label-discharging = "%percentage%%"
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+#format-charging-underline = #ffb52a
 
-format-full-prefix = " "
+#format-discharging = <animation-discharging> <label-discharging>
+#format-discharging =  <label-discharging>
+#format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+#format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 =  
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
+animation-charging-0 = "" 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
+animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
@@ -303,21 +327,21 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
 
 format = <ramp> <label>
-format-prefix = " "
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-warn = <ramp> <label-warn>
+format-warn = <ramp><label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.foreground-alt}
+label-warn-foreground = #FF0000
 
 ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-1 = 
+ramp-2 =
+ramp-2-foreground = #FF0000
 
 [module/powermenu]
 type = custom/menu
@@ -359,5 +383,3 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-; vim:ft=dosini
