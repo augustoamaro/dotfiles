@@ -7,35 +7,6 @@ window:
     columns: 80
     lines: 24
 
-# Esquema de cores
-colors:
-  primary:
-    background: '0x1c1c1c'
-    foreground: '0xe2e2e2'
-
-  # Cores normais
-  normal:
-    black:   '0x262626'
-    red:     '0xd75f5f'
-    green:   '0x83af83'
-    yellow:  '0xc4a45a'
-    blue:    '0x7cafc2'
-    magenta: '0xd787af'
-    cyan:    '0x87d7af'
-    white:   '0xeeeeee'
-
-  # Cores em negrito
-  bright:
-    black:   '0x1c1c1c'
-    red:     '0xd75f5f'
-    green:   '0x83af83'
-    yellow:  '0xc4a45a'
-    blue:    '0x7cafc2'
-    magenta: '0xd787af'
-    cyan:    '0x87d7af'
-    white:   '0xffffff'
-
-# Fonte
 font:
   normal:
     family: Fira Code
@@ -55,15 +26,37 @@ font:
 
   size: 10.0
 
-# Histórico de rolagem
-scrolling:
-  history: 1000
+# Cores do Alacritty
+colors:
+  # Default colors
+  primary:
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
 
-# Opções do cursor
-cursor:
-  style: Block
-  blink_interval: 750
-  thickness: 0.15
+  # Normal colors
+  normal:
+    black:   '0x1a1b26'
+    red:     '0xff9e64'
+    green:   '0x73daca'
+    yellow:  '0xffe6b3'
+    blue:    '0x7dcfff'
+    magenta: '0xbb9af7'
+    cyan:    '0x2ac3de'
+    white:   '0xc0caf5'
+
+  # Bright colors
+  bright:
+    black:   '0x727682'
+    red:     '0xff9e64'
+    green:   '0x73daca'
+    yellow:  '0xffe6b3'
+    blue:    '0x7dcfff'
+    magenta: '0xbb9af7'
+    cyan:    '0x2ac3de'
+    white:   '0xffffff'
+
+scrolling:
+  history: 5000
 
 # Atalhos de teclado
 key_bindings:
@@ -72,6 +65,3 @@ key_bindings:
   - { key: T, mods: Control, action: SpawnNewInstance }
   - { key: L, mods: Control|Shift, action: ClearHistory }
   - { key: Q, mods: Control, action: Quit }
-
-shell:
-  program: tmux
