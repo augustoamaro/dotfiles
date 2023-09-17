@@ -1,4 +1,3 @@
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -42,8 +41,9 @@ default_floating_border pixel 1
 hide_edge_borders smart
 
 # Adjust monitors
-exec_always --no-startup-id sh ~/.config/i3/external_monitor.sh
-bindsym $mod+x exec --no-startup-id sh ~/.config/i3/external_monitor.sh
+exec --no-startup-id xrandr --output eDP-1 --primary --auto --output HDMI-1 --auto --above DP-1 --output DP-1 --mode 1920x1080 --rate 74.97 --left-of eDP-1
+exec_always --no-startup-id sh ~/.config/i3/monitor.sh
+bindsym $mod+x exec --no-startup-id sh ~/.config/i3/monitor.sh
 
 # Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
@@ -53,7 +53,9 @@ bindsym --release Print exec --no-startup-id flameshot gui
 exec_always --no-startup-id flameshot
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill $HOME/Pictures/farm.jpg
+#exec --no-startup-id feh --bg-fill $HOME/Pictures/farm.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/farm.jpg
+
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -62,7 +64,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
-bindsym $mod+s exec --no-startup-id ~/scripts/rofi-search.sh
+bindsym $mod+s exec --no-startup-id ~/scripts/search.sh
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
